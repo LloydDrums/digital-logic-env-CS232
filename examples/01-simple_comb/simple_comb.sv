@@ -60,17 +60,4 @@ endmodule
 
 
 
-    // ? Solution below:
-    // assign y = ~a & ~b & c | a & ~b & ~c;
-
-    // OR structural:
-
-    // wire _a, _b, _c;
-    // not(_a, a);
-    // not(_b, b);
-    // not(_c, c);
-    // wire term1, term2, result;
-    // and(term1, _a, _b, c);
-    // and(term2, a, _b, _c);
-    // or(result, term1, term2);
-    // assign y = result;
+    
