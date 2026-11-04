@@ -61,8 +61,8 @@ endmodule
 
     // ? Solution below:
     // Solution 1:
-    // assign sum = a ^ b ^ cin;
-    // assign cout = (a & b) | (a & cin) | (b & cin);
+    // assign sum = 
+    // assign cout = 
 
     // Solution 2
     // assign {cout, sum} = a + b + cin;
