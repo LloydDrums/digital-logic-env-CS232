@@ -1,6 +1,6 @@
 module simple_comb(
     input  logic a,
-    input  logic b,
+    input  logic b,h
     input  logic c,
     output logic y
 );

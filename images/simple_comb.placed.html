@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Utilization Details</title>
+</head>
+
+<body>
+  <h1>Utilization Details</h1>
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: grey;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+td:first-child {
+  background-color: grey;
+  color: white;
+  vertical-align: top;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+</style>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var coll = document.getElementsByClassName("collapsible");
+  for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+});
+</script>
+<h2>Critical Paths</h2><br/><button class="collapsible">Click to expand/hide</button><div class="content"><table><tr><th></th><td><table><tr><th>from</th><th>path</th><th>to</th></tr><tr><td>posedge clock</td><td><ul><li><table><tr><th>delay</th><td>1.3899999856948853</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>14</li><li>27</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>14</li><li>27</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>type</th><td>clk-to-q</td></tr></table></li><li><table><tr><th>delay</th><td>2.4089999198913574</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>14</li><li>27</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>net</th><td>ledAndKey.state[5]</td></tr><tr><th>sources</th><td><ul></ul></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>15</li><li>26</li></ul></td></tr><tr><th>port</th><td>I2</td></tr></table></td></tr><tr><th>type</th><td>routing</td></tr></table></li><li><table><tr><th>delay</th><td>1.2050000429153442</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>15</li><li>26</li></ul></td></tr><tr><th>port</th><td>I2</td></tr></table></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>15</li><li>26</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>type</th><td>logic</td></tr></table></li><li><table><tr><th>delay</th><td>1.7610000371932983</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>15</li><li>26</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>net</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2[1]</td></tr><tr><th>sources</th><td><ul><li>/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22</li></ul></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_I2_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>27</li></ul></td></tr><tr><th>port</th><td>I2</td></tr></table></td></tr><tr><th>type</th><td>routing</td></tr></table></li><li><table><tr><th>delay</th><td>1.2050000429153442</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_I2_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>27</li></ul></td></tr><tr><th>port</th><td>I2</td></tr></table></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_I2_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>27</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>type</th><td>logic</td></tr></table></li><li><table><tr><th>delay</th><td>1.7610000371932983</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_I2_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>27</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>net</th><td>ledAndKey.state_SB_DFF_Q_7_D_SB_LUT4_O_I3_SB_LUT4_O_I2_SB_LUT4_I2_O[3]</td></tr><tr><th>sources</th><td><ul><li>/opt/oss-cad-suite/lib/../share/yosys/ice40/cells_map.v:6.21-6.22</li></ul></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.bp_start_SB_DFFESR_Q_E_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>27</li></ul></td></tr><tr><th>port</th><td>I3</td></tr></table></td></tr><tr><th>type</th><td>routing</td></tr></table></li><li><table><tr><th>delay</th><td>0.8740000128746033</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.bp_start_SB_DFFESR_Q_E_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>27</li></ul></td></tr><tr><th>port</th><td>I3</td></tr></table></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.bp_start_SB_DFFESR_Q_E_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>27</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>type</th><td>logic</td></tr></table></li><li><table><tr><th>delay</th><td>3.0309998989105225</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.bp_start_SB_DFFESR_Q_E_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>27</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>net</th><td>ledAndKey.bp_start_SB_DFFESR_Q_E</td></tr><tr><th>sources</th><td><ul></ul></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.bp_start_SB_DFFESR_Q_DFFLC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>28</li></ul></td></tr><tr><th>port</th><td>CEN</td></tr></table></td></tr><tr><th>type</th><td>routing</td></tr></table></li><li><table><tr><th>delay</th><td>0.10000000149011612</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.bp_start_SB_DFFESR_Q_DFFLC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>28</li></ul></td></tr><tr><th>port</th><td>CEN</td></tr></table></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.bp_start_SB_DFFESR_Q_DFFLC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>28</li></ul></td></tr><tr><th>port</th><td>CEN</td></tr></table></td></tr><tr><th>type</th><td>setup</td></tr></table></li></ul></td><td>posedge clock</td></tr><tr><td><async></td><td><ul><li><table><tr><th>delay</th><td>0</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.tm_dio_io</td></tr><tr><th>loc</th><td><ul><li>18</li><li>31</li></ul></td></tr><tr><th>port</th><td>D_IN_0</td></tr></table></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.tm_dio_io</td></tr><tr><th>loc</th><td><ul><li>18</li><li>31</li></ul></td></tr><tr><th>port</th><td>D_IN_0</td></tr></table></td></tr><tr><th>type</th><td>source</td></tr></table></li><li><table><tr><th>delay</th><td>3.1500000953674316</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.tm_dio_io</td></tr><tr><th>loc</th><td><ul><li>18</li><li>31</li></ul></td></tr><tr><th>port</th><td>D_IN_0</td></tr></table></td></tr><tr><th>net</th><td>ledAndKey.dio_in</td></tr><tr><th>sources</th><td><ul><li>ledandkey.sv:29.11-29.17</li></ul></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.bp.tm_din_SB_LUT4_I2_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>29</li></ul></td></tr><tr><th>port</th><td>I2</td></tr></table></td></tr><tr><th>type</th><td>routing</td></tr></table></li><li><table><tr><th>delay</th><td>1.1549999713897705</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.bp.tm_din_SB_LUT4_I2_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>29</li></ul></td></tr><tr><th>port</th><td>I2</td></tr></table></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.bp.tm_din_SB_LUT4_I2_LC</td></tr><tr><th>loc</th><td><ul><li>16</li><li>29</li></ul></td></tr><tr><th>port</th><td>I2</td></tr></table></td></tr><tr><th>type</th><td>setup</td></tr></table></li></ul></td><td>posedge clock</td></tr><tr><td>posedge clock</td><td><ul><li><table><tr><th>delay</th><td>1.3899999856948853</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.bp.clock_out_SB_DFFESR_Q_D_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>17</li><li>29</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>ledAndKey.bp.clock_out_SB_DFFESR_Q_D_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>17</li><li>29</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>type</th><td>clk-to-q</td></tr></table></li><li><table><tr><th>delay</th><td>2.9519999027252197</td></tr><tr><th>from</th><td><table><tr><th>cell</th><td>ledAndKey.bp.clock_out_SB_DFFESR_Q_D_SB_LUT4_O_LC</td></tr><tr><th>loc</th><td><ul><li>17</li><li>29</li></ul></td></tr><tr><th>port</th><td>O</td></tr></table></td></tr><tr><th>net</th><td>tm_clock$SB_IO_OUT</td></tr><tr><th>sources</th><td><ul><li>top.sv:3.18-3.26</li></ul></td></tr><tr><th>to</th><td><table><tr><th>cell</th><td>tm_clock$sb_io</td></tr><tr><th>loc</th><td><ul><li>19</li><li>31</li></ul></td></tr><tr><th>port</th><td>D_OUT_0</td></tr></table></td></tr><tr><th>type</th><td>routing</td></tr></table></li></ul></td><td><async></td></tr></table></td></tr></table><br>
+
+</div><h2>Frequency</h2><br/><button class="collapsible">Click to expand/hide</button><div class="content"><table><tr><th></th><td><table><tr><th>clock</th><td><table><tr><th>achieved</th><td>72.80139923095703</td></tr><tr><th>constraint</th><td>6.00002384185791</td></tr></table></td></tr></table></td></tr></table><br>
+
+</div><h2>Utilization</h2><br/><button class="collapsible">Click to expand/hide</button><div class="content"><table><tr><th></th><td><table><tr><th>ICESTORM_DSP</th><td><table><tr><th>available</th><td>8</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>ICESTORM_HFOSC</th><td><table><tr><th>available</th><td>1</td></tr><tr><th>used</th><td>1</td></tr></table></td></tr><tr><th>ICESTORM_LC</th><td><table><tr><th>available</th><td>5280</td></tr><tr><th>used</th><td>106</td></tr></table></td></tr><tr><th>ICESTORM_LFOSC</th><td><table><tr><th>available</th><td>1</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>ICESTORM_PLL</th><td><table><tr><th>available</th><td>1</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>ICESTORM_RAM</th><td><table><tr><th>available</th><td>30</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>ICESTORM_SPRAM</th><td><table><tr><th>available</th><td>4</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>IO_I3C</th><td><table><tr><th>available</th><td>2</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>SB_GB</th><td><table><tr><th>available</th><td>8</td></tr><tr><th>used</th><td>1</td></tr></table></td></tr><tr><th>SB_I2C</th><td><table><tr><th>available</th><td>2</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>SB_IO</th><td><table><tr><th>available</th><td>39</td></tr><tr><th>used</th><td>3</td></tr></table></td></tr><tr><th>SB_LEDDA_IP</th><td><table><tr><th>available</th><td>1</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>SB_RGBA_DRV</th><td><table><tr><th>available</th><td>1</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>SB_SPI</th><td><table><tr><th>available</th><td>2</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr><tr><th>SB_WARMBOOT</th><td><table><tr><th>available</th><td>1</td></tr><tr><th>used</th><td>0</td></tr></table></td></tr></table></td></tr></table><br>
+
+</div>
+
+<br><h2>Place/Route: <a href="http://127.0.0.1:3000/svg/simple_comb.placed.svg" target="_blank" alt="Utilization Details">Open Image</a></h2><br /><br />
+
+</body>
+
+</html>
