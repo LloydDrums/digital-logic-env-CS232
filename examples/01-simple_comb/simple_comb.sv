@@ -19,7 +19,8 @@ module simple_comb(
 // ! This should be super simple --- one line.  There's no need to simplify / etc.
 // ! Short tutorial on Verilog operators at: https://alchitry.com/tutorials/verilog/verilog-operators/
 // ! and Verilog expressions: https://verilogams.com/quickref/expressions.html
-    assign y = a & b;  // FIXME
+//  assign y = a & b;  // FIXME
+    assign y = ~b & (a & ~c | ~a & c);
 
 
 
@@ -60,4 +61,4 @@ endmodule
 
 
 
-    
+
